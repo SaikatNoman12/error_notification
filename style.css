@@ -9,6 +9,7 @@ body {
     padding: 0px;
     box-sizing: border-box;
     overflow-x: hidden;
+    font-family: monospace;
 }
 
 .button {
@@ -26,11 +27,10 @@ body {
 }
 
 .error-box {
-    min-height: 100vh;
     width: 20%;
     background-color: transparent;
     position: fixed;
-    top: 0px;
+    bottom: 0px;
     right: 0px;
     overflow: hidden;
     display: flex;
@@ -47,15 +47,15 @@ body {
     padding: 0px 15px;
     justify-content: flex-start;
     border-radius: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 9px;
+    margin-bottom: 9px;
     background-color: crimson;
 
+    /* use for hiding error massage */
     transform: translateX(400px);
     transition: all .5s ease;
     opacity: 0;
     visibility: hidden;
-
 }
 
 .error h1 {
@@ -65,8 +65,7 @@ body {
     color: #fff;
 }
 
-.error-box .error-slow {
-    /* transition: all 1s ease; */
+.error-box .error-show {
     transform: translateX(0px);
     opacity: 1;
     visibility: visible;
