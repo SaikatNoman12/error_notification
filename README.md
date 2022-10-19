@@ -1,3 +1,3 @@
 # Error notification
 
-## Link [linkhttps://github.com/user/repo/blob/branch/other_file.md] (https://github.com/user/repo/blob/branch/other_file.md)
+## Link [https://saikatnoman12.github.io/error_notification/] (https://saikatnoman12.github.io/error_notification/)
