@@ -111,26 +111,36 @@ body {
 @media (max-width:767px) {
 
     .mobile-response-error {
+        width: 100%;
         opacity: 0;
         visibility: hidden;
         display: inline;
-        position: absolute;
+        position: fixed;
         bottom: 20px;
-        right: 20px;
+        right: 0px;
         transition: opacity .2s ease-in-out,
-            visibility .2s ease-in-out;
+            visibility .2s ease-in-out,
+            transform .2s ease-in-out;
+        transform: translateY(20px);
+
     }
 
     .mobile-response-error .responsive-error {
         color: red;
         font-family: monospace;
-        font-size: 20px;
+        font-size: 22px;
         font-weight: 500;
+        text-align: center;
     }
 
     .response-error-show {
+        height: auto;
         opacity: 1;
         visibility: visible;
+        /* transition: transform .3s ease-in-out; */
+        transform: translateY(0px);
+
+
     }
 
 }
