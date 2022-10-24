@@ -1,39 +1,69 @@
 const button = document.querySelector('.button');
+const responsiveErr = document.querySelector('.mobile-response-error');
+
 
 button.addEventListener('click', () => {
-    errorMessage()
+
+    const windowWidth = window.innerWidth;
+
+    errorMessage(windowWidth);
+
 });
 
 
-function errorMessage() {
-    
-    const errorBox = document.querySelector('.error-box');
+function errorMessage(winWidth) {
 
-    const createErrDiv = document.createElement('div');
-    createErrDiv.classList.add('error');
+    if (winWidth > 767) {
 
-    const createH1 = document.createElement('h1');
-    createH1.innerHTML = 'Please try again.';
-    createErrDiv.appendChild(createH1);
+        const errorBox = document.querySelector('.error-box');
 
-    errorBox.appendChild(createErrDiv);
+        const createErrDiv = document.createElement('div');
+        createErrDiv.classList.add('error');
 
-    // add error-show class in createErrDiv;  
-    setTimeout(function () {
-        createErrDiv.classList.add('error-show');
-    }, 0);
+        const createH1 = document.createElement('h1');
+        createH1.innerHTML = 'Please try again.';
+        createErrDiv.appendChild(createH1);
 
-    // remove error-show class in createErrDiv
-    setTimeout(function () {
-        createErrDiv.classList.remove('error-show');
-        createErrDiv.style.opacity = '0';
-        createErrDiv.style.visibility = 'hidden';
-    }, 2000);
+        errorBox.appendChild(createErrDiv);
 
-    // remove child on 3 second;
-    setTimeout(function () {
-        errorBox.removeChild(createErrDiv);
-    }, 3000);
+        // add error-show class in createErrDiv;  
+        setTimeout(function () {
+            createErrDiv.classList.add('error-show');
+        }, 0);
+
+        // remove error-show class in createErrDiv;
+        setTimeout(function () {
+            createErrDiv.classList.remove('error-show');
+            createErrDiv.style.opacity = '0';
+            createErrDiv.style.visibility = 'hidden';
+        }, 2000);
+
+        // remove child on 3 second;
+        setTimeout(function () {
+
+            errorBox.removeChild(createErrDiv);
+
+        }, 3000);
+
+    }
+    else {
+
+        // add response-error-show class in responsiveErr; 
+        setTimeout(() => {
+
+            responsiveErr.classList.add('response-error-show');
+
+        }, 0);
+
+         //  remove response-error-show class in responsiveErr;
+        setTimeout(() => {
+
+            responsiveErr.classList.remove('response-error-show');
+
+        }, 2000);
+
+    }
 
 }
+
 

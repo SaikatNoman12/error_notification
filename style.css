@@ -26,8 +26,9 @@ body {
 }
 
 .error-box {
-    width: 20%;
+    width: 310px;
     background-color: transparent;
+    /* background-color: red; */
     position: fixed;
     bottom: 0px;
     right: 0px;
@@ -36,6 +37,7 @@ body {
     flex-direction: column;
     justify-content: flex-end;
 }
+
 
 .error-box .error {
     width: 300px;
@@ -68,4 +70,67 @@ body {
     transform: translateX(0px);
     opacity: 1;
     visibility: visible;
+}
+
+@media (max-width:992px) {
+
+    .error-box {
+        width: 250px;
+    }
+
+    .error-box .error {
+        width: 240px;
+        height: 45px;
+    }
+
+    .error h1 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:767px) {
+    .error-box {
+        width: 0px;
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+}
+
+.mobile-response-error {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+
+.response-error-show {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media (max-width:767px) {
+
+    .mobile-response-error {
+        opacity: 0;
+        visibility: hidden;
+        display: inline;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        transition: opacity .2s ease-in-out,
+            visibility .2s ease-in-out;
+    }
+
+    .mobile-response-error .responsive-error {
+        color: red;
+        font-family: monospace;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .response-error-show {
+        opacity: 1;
+        visibility: visible;
+    }
+
 }
